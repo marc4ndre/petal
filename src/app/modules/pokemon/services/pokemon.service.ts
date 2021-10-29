@@ -39,7 +39,8 @@ export class PokemonService {
     return {
       name: pokemon.name,
       type: pokemon.types.length > 0 ? pokemon.types[0].type.name : '',
-      evolution: chain.chain.evolves_to[0]?.evolves_to[0]?.species.name
+      evolution: chain.chain.evolves_to[0]?.evolves_to[0]?.species.name,
+      imageUrl: pokemon.sprites.front_default
     }
   }
 }

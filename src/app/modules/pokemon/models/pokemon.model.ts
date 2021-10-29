@@ -2,6 +2,7 @@ export interface Pokemon {
   name: string
   type: string
   evolution: string
+  imageUrl: string;
 }
 
 interface PokemonResult {
@@ -24,6 +25,9 @@ export interface PokemonApiResponse {
   types: PokemonType[];
   species: {
     url: string
+  }
+  sprites: {
+    front_default: string;
   }
 }
 
