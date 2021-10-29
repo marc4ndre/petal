@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Pokemon} from "../models/pokemon.model";
 
 
@@ -7,10 +7,13 @@ import {Pokemon} from "../models/pokemon.model";
   styleUrls: ['./pokemon.component.scss'],
   templateUrl: './pokemon.component.html'
 })
-export class PokemonComponent {
+export class PokemonComponent implements OnInit {
   @Input() pokemon: Pokemon;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
+    console.log(this.pokemon.chain);
   }
 
 }

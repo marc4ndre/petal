@@ -1,12 +1,12 @@
 <mat-card class="pokemon">
   <mat-card-header>
-    <mat-card-title>POKEMON</mat-card-title>
+    <mat-card-title>{{ pokemon.name }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]=pokemon.imageUrl alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]=pokemon.imageUrl>
   <mat-card-content>
-    <mat-label>Pokemon Name: {{ pokemon.name }}</mat-label>
-    <mat-label>Pokemon Type: {{ pokemon.type }}</mat-label>
-    <mat-label>Pokemon Evoluton: {{ pokemon.evolution }}</mat-label>
+    <mat-label><b>Pokemon Type:</b> {{ pokemon.type }}</mat-label>
+    <mat-label> <b>Evolutions :</b>
+      <pokemon-evo-component [chain]="pokemon.chain"></pokemon-evo-component>
+    </mat-label>
   </mat-card-content>
-
 </mat-card>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {map, switchMap} from 'rxjs/operators';
 import {HttpClient} from "@angular/common/http";
 import {
+  EvolutionChain,
   EvolutionChainApiResponse,
   Pokemon,
   PokemonApiResponse,
@@ -39,8 +40,16 @@ export class PokemonService {
     return {
       name: pokemon.name,
       type: pokemon.types.length > 0 ? pokemon.types[0].type.name : '',
-      evolution: chain.chain.evolves_to[0]?.evolves_to[0]?.species.name,
+      chain: this.getEvolutionChain(chain.chain),
       imageUrl: pokemon.sprites.front_default
     }
   }
+
+  private getEvolutionChain(chain: EvolutionChain): EvolutionChain {
+    return {
+      species: { name: chain.species.name },
+      evolves_to: chain.evolves_to.map(e => this.getEvolutionChain(e))
+    } as EvolutionChain;
+  }
+
 }

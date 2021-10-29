@@ -16,6 +16,7 @@ import {RouterModule} from "@angular/router";
 import {PokemonEffects} from "./effects/pokemon.effect";
 import {PokemonComponent} from "./components/pokemon.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {PokemonEvoComponent} from "./components/pokemon-evo.component";
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     PokedexContainerComponent,
     PokedexComponent,
     PokemonContainerComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemonEvoComponent
   ],
   providers: [
     PokemonService

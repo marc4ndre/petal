@@ -1,7 +1,7 @@
 export interface Pokemon {
   name: string
   type: string
-  evolution: string
+  chain: EvolutionChain;
   imageUrl: string;
 }
 
@@ -38,7 +38,12 @@ export interface SpeciesApiResponse {
 }
 
 export interface EvolutionChainApiResponse {
-  chain: {
-    evolves_to: any[];
+  chain: EvolutionChain;
+}
+
+export interface EvolutionChain {
+  species: {
+    name: string;
   }
+  evolves_to: any[];
 }
