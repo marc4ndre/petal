@@ -11,7 +11,6 @@ import { selectors } from '../reducers/selectors';
   templateUrl: './pokedex.container.component.html'
 })
 export class PokedexContainerComponent implements OnInit {
-  public page: number;
   public names$: Observable<string[]>;
 
   constructor(private store: Store<fromReducer.State>) {

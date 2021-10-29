@@ -6,7 +6,9 @@
         <mat-header-cell *matHeaderCellDef>
           <span>Nom</span>
         </mat-header-cell>
-        <mat-cell *matCellDef="let name;">{{ name }}</mat-cell>
+        <mat-cell *matCellDef="let name;">
+          <a routerLink="{{ '/pokemon/' + name }}" class="bold">{{ name }}</a>
+        </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

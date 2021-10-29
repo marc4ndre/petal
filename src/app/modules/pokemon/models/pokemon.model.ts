@@ -9,6 +9,32 @@ interface PokemonResult {
   url: string
 }
 
-export interface PokemonList {
+export interface PokemonListApiResponse {
   results: PokemonResult[];
+}
+
+interface PokemonType {
+  type: {
+    name: string;
+  }
+}
+
+export interface PokemonApiResponse {
+  name: string;
+  types: PokemonType[];
+  species: {
+    url: string
+  }
+}
+
+export interface SpeciesApiResponse {
+  evolution_chain: {
+    url: string;
+  }
+}
+
+export interface EvolutionChainApiResponse {
+  chain: {
+    evolves_to: any[];
+  }
 }
