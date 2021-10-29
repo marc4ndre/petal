@@ -14,7 +14,7 @@ export interface PokemonListApiResponse {
   results: PokemonResult[];
 }
 
-interface PokemonType {
+export interface PokemonType {
   type: {
     name: string;
   }

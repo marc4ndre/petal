@@ -13,7 +13,6 @@ export class PokemonComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.pokemon.chain);
   }
 
 }
