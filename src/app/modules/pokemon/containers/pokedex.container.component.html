@@ -1,0 +1,26 @@
+<!--<ng-container *ngIf="route.children.length === 0">-->
+<!--  <app-page-header icon="people" [label]="'ACCOUNTS' | translate"></app-page-header>-->
+
+<!--  <div class="w-100 pad-5">-->
+<!--    <div class="w-100 pad-5 card">-->
+<!--      <ng-container *ngIf="!(isLoaded$ | async); else content">-->
+<!--        <ng-container  *ngIf="(process$ | async)?.status === processStatus.Failed; then error else loader;"></ng-container>-->
+<!--      </ng-container>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ng-container>-->
+
+<!--<ng-template #content>-->
+<!--  <app-accounts-list [elements]="accounts$ | async"></app-accounts-list>-->
+<!--</ng-template>-->
+
+<!--<ng-template #loader>-->
+<!--  <app-loader-box></app-loader-box>-->
+<!--</ng-template>-->
+
+<!--<ng-template #error>-->
+<!--  <app-error-box></app-error-box>-->
+<!--</ng-template>-->
+
+<!--<router-outlet></router-outlet>-->
+<pokedex-component *ngIf="(names$ | async).length > 0" [names]="names$ | async"></pokedex-component>
