@@ -10,7 +10,7 @@ import {Pokemon} from "../models/pokemon.model";
 
 @Component({
   selector: 'app-pokemon',
-  templateUrl: './pokemon.container.component.html'
+  templateUrl: './pokemon.container.component.html',
 })
 export class PokemonContainerComponent implements OnInit {
   public pokemon$: Observable<Pokemon>;
@@ -21,6 +21,11 @@ export class PokemonContainerComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(PokemonActions.load({name: this.route.snapshot.params['name']}));
     this.pokemon$ = this.store.select(selectors.pokemon.get);
-  }
 
+    this.route.params.subscribe(
+      params => {
+        this.store.dispatch(PokemonActions.load({name: params['name']}));
+      }
+    );
+  }
 }

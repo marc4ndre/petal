@@ -1,5 +1,5 @@
 <ul>
-  <li> {{ chain.species.name }} </li>
+  <li><a routerLink="{{ '/pokemon/' + chain.species.name }}" class="bold">{{ chain.species.name }}</a></li>
   <div style="margin-left: 10px" *ngFor="let evo of chain.evolves_to">
     <pokemon-evo-component [chain]="evo"></pokemon-evo-component>
   </div>
